@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="author" content="yinq">
+  <title>首页 - 脚本管理系统</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="js/bootstrap-multitabs/multitabs.min.css">
+  <!-- 引入对话框样式-->
+  <link rel="stylesheet" type="text/css" href="js/jquery-confirm/jquery-confirm.min.css">
+</head>
+
+<body class="lyear-index">
+  <div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+      <!--左侧导航-->
+      <aside class="lyear-layout-sidebar">
+
+        <!-- logo -->
+        <div id="logo" class="sidebar-header">
+          <a href="index.html">
+            <h3>脚本管理系统</h1>
+          </a>
+        </div>
+        <div class="lyear-layout-sidebar-info lyear-scroll">
+
+          <nav class="sidebar-main">
+
+            <ul class="nav-drawer">
+              <li class="nav-item active">
+                <a class="multitabs" href="main.html" id="default-page">
+                  <i class="mdi mdi-home-city-outline"></i>
+                  <span>日志</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="multitabs" href="account.html">
+                  <i class="mdi mdi-account-cog-outline"></i>
+                  <span>账号管理</span>
+                </a>
+              </li>
+              <!-- <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-television-guide"></i>
+                  <span>布局</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_layout_break_point.html">拐点</a> </li>
+                  <li> <a class="multitabs" href="lyear_layout_containers.html">容器</a> </li>
+                  <li> <a class="multitabs" href="lyear_layout_grid.html">栅格</a> </li>
+                  <li> <a class="multitabs" href="lyear_layout_columns.html">列</a> </li>
+                  <li> <a class="multitabs" href="lyear_layout_gutters.html">沟槽</a> </li>
+                  <li> <a class="multitabs" href="lyear_layout_utilities.html">实用程序</a> </li>
+                  <li> <a class="multitabs" href="lyear_layout_zindex.html">Z-index</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-silo"></i>
+                  <span>页面内容</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_content_typography.html">排版</a> </li>
+                  <li> <a class="multitabs" href="lyear_content_images.html">图片</a> </li>
+                  <li> <a class="multitabs" href="lyear_content_tables.html">表格</a> </li>
+                  <li> <a class="multitabs" href="lyear_content_figures.html">画像</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-map-outline"></i>
+                  <span>表单</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_forms_overview.html">概述</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_control.html">表单控件</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_select.html">下拉选择</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_radio.html">单选框</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_checkbox.html">复选框</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_switch.html">开关</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_range.html">范围</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_input_group.html">输入组</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_floating_labels.html">浮动标签</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_layout.html">布局</a> </li>
+                  <li> <a class="multitabs" href="lyear_forms_validation.html">验证</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-tune"></i>
+                  <span>组件</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_components_accordion.html">手风琴菜单</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_alerts.html">警告框</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_badge.html">徽章</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_breadcrumb.html">面包屑导航</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_buttons.html">按钮</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_button_group.html">按钮组</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_card.html">卡片</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_carousel.html">轮播</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_close_button.html">关闭按钮</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_collapse.html">折叠</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_dropdowns.html">下拉菜单</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_list_group.html">列表组</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_modal.html">模态框</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_navs_tabs.html">导航 &amp; 标签页</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_navbar.html">导航栏</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_offcanvas.html">滑动容器</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_pagination.html">分页</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_placeholders.html">占位符</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_popovers.html">POP提示</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_progress.html">进度条</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_scrollspy.html">滚动监听</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_spinners.html">加载状态</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_toasts.html">通知消息</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_tooltips.html">工具提示</a> </li>
+                  <li> <a class="multitabs" href="lyear_components_other.html">其他</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-card-bulleted-outline"></i>
+                  <span>助手</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_helpers_clearfix.html">清除浮动</a> </li>
+                  <li> <a class="multitabs" href="lyear_helpers_colored_links.html">彩色链接</a> </li>
+                  <li> <a class="multitabs" href="lyear_helpers_ratio.html">比例</a> </li>
+                  <li> <a class="multitabs" href="lyear_helpers_position.html">定位</a> </li>
+                  <li> <a class="multitabs" href="lyear_helpers_stacks.html">堆叠</a> </li>
+                  <li> <a class="multitabs" href="lyear_helpers_visually_hidden.html">视觉隐藏</a> </li>
+                  <li> <a class="multitabs" href="lyear_helpers_stretched_link.html">延伸链接</a> </li>
+                  <li> <a class="multitabs" href="lyear_helpers_text_truncation.html">文本截断</a> </li>
+                  <li> <a class="multitabs" href="lyear_helpers_vertical_rule.html">垂直法则</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-map-search-outline"></i>
+                  <span>工具类</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_utilities_background.html">背景</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_borders.html">边框</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_colors.html">颜色</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_display.html">显示属性</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_flex.html">弹性布局</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_float.html">浮动</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_interactions.html">交互</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_opacity.html">透明度</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_overflow.html">溢出处理</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_position.html">定位</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_shadows.html">阴影</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_sizing.html">尺寸</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_spacing.html">间距</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_text.html">文本</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_vertical_align.html">垂直对齐</a> </li>
+                  <li> <a class="multitabs" href="lyear_utilities_visibility.html">可见性</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-stove"></i>
+                  <span>示例页面</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_pages_doc.html">文档列表</a> </li>
+                  <li> <a class="multitabs" href="lyear_pages_table.html">表格插件</a> </li>
+                  <li> <a class="multitabs" href="lyear_pages_gallery.html">图库列表</a> </li>
+                  <li> <a class="multitabs" href="lyear_pages_config.html">网站配置</a> </li>
+                  <li> <a class="multitabs" href="lyear_pages_rabc.html">设置权限</a> </li>
+                  <li> <a class="multitabs" href="lyear_pages_add_doc.html">新增文档</a> </li>
+                  <li> <a href="lyear_pages_login_1.html" target="_blank">登录页面1</a> </li>
+                  <li> <a href="lyear_pages_login_2.html" target="_blank">登录页面2</a> </li>
+                  <li> <a href="lyear_pages_login_3.html" target="_blank">登录页面3</a> </li>
+                  <li> <a href="lyear_pages_login_4.html" target="_blank">登录页面4</a> </li>
+                  <li> <a class="multitabs" href="lyear_pages_error.html">错误页面</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-card-text-outline"></i>
+                  <span>其他内容</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_other_icons.html">图标</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-file-code-outline"></i>
+                  <span>JS 插件</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a class="multitabs" href="lyear_pages_guide.html">表单向导</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_datepicker.html">日期选取器</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_colorpicker.html">选色器</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_chartjs.html">Chart.js</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_jconfirm.html">对话框</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_tags_input.html">标签插件</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_notify.html">通知消息</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_maxlength.html">长度判断</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_select.html">下拉选择</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_fullcalendar.html">日程插件</a> </li>
+                  <li> <a class="multitabs" href="lyear_js_loading.html">loading插件</a> </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-item-has-subnav">
+                <a href="javascript:void(0)">
+                  <i class="mdi mdi-folder-text-outline"></i>
+                  <span>多级菜单</span>
+                </a>
+                <ul class="nav nav-subnav">
+                  <li> <a href="#!">一级菜单</a> </li>
+                  <li class="nav-item nav-item-has-subnav">
+                    <a href="#!">一级菜单</a>
+                    <ul class="nav nav-subnav">
+                      <li> <a href="#!">二级菜单</a> </li>
+                      <li class="nav-item nav-item-has-subnav">
+                        <a href="#!">二级菜单</a>
+                        <ul class="nav nav-subnav">
+                          <li> <a href="#!">三级菜单</a> </li>
+                          <li> <a href="#!">三级菜单</a> </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li> <a href="#!">一级菜单</a> </li>
+                </ul>
+              </li> -->
+            </ul>
+          </nav>
+        </div>
+
+      </aside>
+      <!--End 左侧导航-->
+
+      <!--头部信息-->
+      <header class="lyear-layout-header">
+
+        <nav class="navbar">
+
+          <div class="navbar-left">
+            <div class="lyear-aside-toggler">
+              <span class="lyear-toggler-bar"></span>
+              <span class="lyear-toggler-bar"></span>
+              <span class="lyear-toggler-bar"></span>
+            </div>
+          </div>
+
+          <ul class="navbar-right d-flex align-items-center">
+            <!--切换主题配色-->
+            <li class="dropdown dropdown-skin">
+              <span data-bs-toggle="dropdown" class="icon-item">
+                <i class="mdi mdi-palette fs-5"></i>
+              </span>
+              <ul class="dropdown-menu dropdown-menu-end" data-stopPropagation="true">
+                <li class="lyear-skin-title">
+                  <p>主题</p>
+                </li>
+                <li class="lyear-skin-li clearfix">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="site_theme" id="site_theme_1" value="default"
+                      checked="checked">
+                    <label class="form-check-label" for="site_theme_1"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="site_theme" id="site_theme_2"
+                      value="translucent-green">
+                    <label class="form-check-label" for="site_theme_2"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="site_theme" id="site_theme_3"
+                      value="translucent-blue">
+                    <label class="form-check-label" for="site_theme_3"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="site_theme" id="site_theme_4"
+                      value="translucent-yellow">
+                    <label class="form-check-label" for="site_theme_4"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="site_theme" id="site_theme_5"
+                      value="translucent-red">
+                    <label class="form-check-label" for="site_theme_5"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="site_theme" id="site_theme_6"
+                      value="translucent-pink">
+                    <label class="form-check-label" for="site_theme_6"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="site_theme" id="site_theme_7"
+                      value="translucent-cyan">
+                    <label class="form-check-label" for="site_theme_7"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="site_theme" id="site_theme_8" value="dark">
+                    <label class="form-check-label" for="site_theme_8"></label>
+                  </div>
+                </li>
+                <li class="lyear-skin-title">
+                  <p>LOGO</p>
+                </li>
+                <li class="lyear-skin-li clearfix">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="logo_bg" id="logo_bg_1" value="default"
+                      checked="checked">
+                    <label class="form-check-label" for="logo_bg_1"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="logo_bg" id="logo_bg_2" value="color_2">
+                    <label class="form-check-label" for="logo_bg_2"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="logo_bg" id="logo_bg_3" value="color_3">
+                    <label class="form-check-label" for="logo_bg_3"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="logo_bg" id="logo_bg_4" value="color_4">
+                    <label class="form-check-label" for="logo_bg_4"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="logo_bg" id="logo_bg_5" value="color_5">
+                    <label class="form-check-label" for="logo_bg_5"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="logo_bg" id="logo_bg_6" value="color_6">
+                    <label class="form-check-label" for="logo_bg_6"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="logo_bg" id="logo_bg_7" value="color_7">
+                    <label class="form-check-label" for="logo_bg_7"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="logo_bg" id="logo_bg_8" value="color_8">
+                    <label class="form-check-label" for="logo_bg_8"></label>
+                  </div>
+                </li>
+                <li class="lyear-skin-title">
+                  <p>头部</p>
+                </li>
+                <li class="lyear-skin-li clearfix">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="header_bg" id="header_bg_1" value="default"
+                      checked="checked">
+                    <label class="form-check-label" for="header_bg_1"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="header_bg" id="header_bg_2" value="color_2">
+                    <label class="form-check-label" for="header_bg_2"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="header_bg" id="header_bg_3" value="color_3">
+                    <label class="form-check-label" for="header_bg_3"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="header_bg" id="header_bg_4" value="color_4">
+                    <label class="form-check-label" for="header_bg_4"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="header_bg" id="header_bg_5" value="color_5">
+                    <label class="form-check-label" for="header_bg_5"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="header_bg" id="header_bg_6" value="color_6">
+                    <label class="form-check-label" for="header_bg_6"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="header_bg" id="header_bg_7" value="color_7">
+                    <label class="form-check-label" for="header_bg_7"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="header_bg" id="header_bg_8" value="color_8">
+                    <label class="form-check-label" for="header_bg_8"></label>
+                  </div>
+                </li>
+                <li class="lyear-skin-title">
+                  <p>侧边栏</p>
+                </li>
+                <li class="lyear-skin-li clearfix">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sidebar_bg" id="sidebar_bg_1" value="default"
+                      checked="checked">
+                    <label class="form-check-label" for="sidebar_bg_1"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sidebar_bg" id="sidebar_bg_2" value="color_2">
+                    <label class="form-check-label" for="sidebar_bg_2"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sidebar_bg" id="sidebar_bg_3" value="color_3">
+                    <label class="form-check-label" for="sidebar_bg_3"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sidebar_bg" id="sidebar_bg_4" value="color_4">
+                    <label class="form-check-label" for="sidebar_bg_4"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sidebar_bg" id="sidebar_bg_5" value="color_5">
+                    <label class="form-check-label" for="sidebar_bg_5"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sidebar_bg" id="sidebar_bg_6" value="color_6">
+                    <label class="form-check-label" for="sidebar_bg_6"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sidebar_bg" id="sidebar_bg_7" value="color_7">
+                    <label class="form-check-label" for="sidebar_bg_7"></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sidebar_bg" id="sidebar_bg_8" value="color_8">
+                    <label class="form-check-label" for="sidebar_bg_8"></label>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!--End 切换主题配色-->
+            <!--设置key-->
+            <li class="dropdown">
+              <a href="javascript:void(0)" data-bs-toggle="dropdown" id="set">
+                <span style="margin-left: 10px;">设置key</span>
+              </a>
+            </li>
+            <!--End 设置key-->
+          </ul>
+
+        </nav>
+
+      </header>
+      <!--End 头部信息-->
+
+      <!--页面主要内容-->
+      <main class="lyear-layout-content">
+
+        <div id="iframe-content"></div>
+
+      </main>
+      <!--End 页面主要内容-->
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-multitabs/multitabs.min.js"></script>
+  <script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+  <script type="text/javascript" src="js/index.min.js"></script>
+  <!-- 引入对话框插件 -->
+  <script type="text/javascript" src="js/jquery-confirm/jquery-confirm.min.js"></script>
+  <!-- 引入GoEsay插件 -->
+  <script type="text/javascript" src="js/goesay.js"></script>
+  <!--引入notify插件js-->
+  <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
+  <script type="text/javascript">
+    const channel = new BroadcastChannel("subBroadcast");
+
+    $('#set').on('click', function () {
+      var key = localStorage.getItem('key');
+      $.confirm({
+        title: '设置Goesay的key',
+        content: '<div class="form-group p-1 mb-0">' +
+          '  <label class="control-label">您的key</label>' +
+          '  <input autofocus="" type="text" id="input-key" placeholder="请输入您的key" value="' + (key ? key : "") + '" class="form-control">' +
+          '</div>',
+        buttons: {
+          sayMyName: {
+            text: '确认',
+            btnClass: 'btn-orange',
+            action: function () {
+              var input = this.$content.find('input#input-key');
+              var errorText = this.$content.find('.text-danger');
+              if (!$.trim(input.val())) {
+                $.alert({
+                  content: "key 字段不能为空。",
+                  type: 'red'
+                });
+                return false;
+              }
+              //输入后
+              localStorage.setItem('key', $.trim(input.val()));
+              location.reload();
+            }
+          },
+          '不更改': function () { }
+        }
+      });
+    });
+    var goeasy = GoEasy.getInstance({
+      host: "hangzhou.goeasy.io",  //若是新加坡区域：singapore.goeasy.io
+      appkey: localStorage.getItem('key'),
+      modules: ['pubsub']//根据需要，传入‘pubsub’或'im’，或数组方式同时传入
+    });
+
+    //建立连接
+    goeasy.connect({
+      id: "client_" + new Date().getTime(),
+      data: { from: "client" },
+      onSuccess: function () {  //连接成功
+        postMessage({
+          code: 0,
+          data: {
+            type: "success",
+            Notify: true,
+            title: "连接状态",
+            connect: 'GoEasy连接成功'
+          },
+        })
+        console.log("GoEasy connect successfully.")
+      },
+      onFailed: function (error) { //连接失败
+        postMessage({
+          code: 0,
+          data: {
+            type: "failure",
+            Notify: true,
+            title: "连接状态",
+            connect: 'GoEasy连接失败,code' + error.code + ',error:' + error.content
+          },
+        })
+        console.log("Failed to connect GoEasy, code:" + error.code + ",error:" + error.content);
+      },
+      onProgress: function (attempts) { //连接或自动重连中
+        postMessage({
+          code: 0,
+          data: {
+            type: "warning",
+            Notify: true,
+            title: "连接状态",
+            connect: 'GoEasy连接中'
+          },
+        })
+        console.log("GoEasy is connecting", attempts);
+      }
+    });
+
+    var pubsub = goeasy.pubsub;
+    pubsub.subscribePresence({
+      channel: "3game",
+      onPresence: function (presenceEvent) {
+        var data = presenceEvent;
+        var action;
+        switch (data.action) {
+          case 'join':
+            action = '加入';
+            break;
+          case 'leave':
+            action = '离开';
+            break;
+          case 'timeout':
+            action = '下线';
+            break;
+          case 'back':
+            action = '上线';
+            break;
+          default:
+            action = '未知';
+            break;
+        }
+        var from;
+        switch (data.member.data.from) {
+          case 'client':
+            from = '客户端';
+            break;
+          case 'server':
+            from = '服务端';
+            break;
+          case "listener":
+            from = "监听器";
+            break;
+          case "panel":
+            from = "面板";
+            break;
+          default:
+            from = '未知';
+            break;
+        }
+        postMessage({
+          code: 0,
+          data: {
+            type: "info",
+            Notify: true,
+            title: "用户状态",
+            connect: '用户' + data.member.id + "(" + from + ") " + action + "了频道" + data.channel + "，当前在线设备为" + data.amount
+          },
+        })
+        console.log("用户" + data.member.id + "(" + from + ") " + action + "了频道" + data.channel + "，当前在线设备为" + data.amount);
+      },
+      onSuccess: function () {  //监听成功
+        postMessage({
+          code: 0,
+          data: {
+            type: "success",
+            Notify: true,
+            title: "用户状态",
+            connect: '在线状态监听成功'
+          },
+        });
+        console.log("在线状态监听成功")
+      },
+      onFailed: function (error) { //监听失败
+        postMessage({
+          code: 0,
+          data: {
+            type: "failure",
+            Notify: true,
+            title: "用户状态",
+            connect: '在线状态监听失败, code' + error.code + ',error:' + error.content
+          },
+        })
+        console.log("在线状态监听失败, code:" + error.code + ",error:" + error.content);
+      },
+    });
+
+
+
+    channel.addEventListener("message", (event) => {
+      let data = event.data;
+      data["from"] = "client";
+      pubsub.publish({
+        channel: "3game",
+        message: JSON.stringify(data),
+
+        onSuccess: function () {
+          console.log("消息发布成功。");
+        },
+        onFailed: function (error) {
+          console.log("消息发送失败，错误编码：" + error.code + " 错误信息：" + error.content);
+        }
+      })
+
+    });
+
+
+
+    pubsub.subscribe({
+      channel: "3game",
+      presence: {
+        enable: true
+      },
+      onMessage: function (message) {
+        postMessage(message)
+      },
+      onSuccess: function () {
+        postMessage({
+          code: 0,
+          data: {
+            type: "success",
+            Notify: true,
+            title: "订阅状态",
+            connect: 'Channel订阅成功。'
+          },
+        });
+        console.log("Channel订阅成功。");
+      },
+      onFailed: function (error) {
+        postMessage({
+          code: 0,
+          data: {
+            type: "failure",
+            Notify: true,
+            title: "订阅状态",
+            connect: 'Channel订阅失败, code' + error.code + ',error:' + error.content
+          },
+        })
+        console.log("Channel订阅失败, code:" + error.code + ",error:" + error.content);
+      }
+    });
+
+    function postMessage(message) {
+      let r = false;
+      if (message.content) message = message.content;
+      if (typeof message == "string") {
+        try {
+          message = JSON.parse(message)
+        } catch (error) {
+          r = true;
+        }
+      }
+      if (r || message.from == "client") return;
+      const iframes = document.getElementsByTagName('iframe');
+      for (let i = 0; i < iframes.length; i++) {
+        const iframe = iframes[i];
+        iframe.contentWindow.postMessage(message, '*');
+      }
+      if (message.code==0&&message.data["Notify"]) {
+        showNotify(message.data.type, message.data.title, message.data.connect);
+      }
+    }
+    function showNotify(type, title, message) {
+      console.log(type)
+      $.notify({
+        icon: 'mdi mdi-alert',
+        title,
+        message
+      }, {
+        type: (type == "failure") ? 'danger' : type,
+        allow_dismiss: true,
+        newest_on_top: false,
+        placement: {
+          from: 'top',
+          align: 'right'
+        },
+        offset: {
+          x: 20,
+          y: 20
+        },
+        spacing: 10,
+        z_index: 1031,
+        delay: 5000,
+        animate: {
+          enter: 'animate__animated animate__fadeInRight',
+          exit: 'animate__animated animate__fadeOutUp'
+        },
+      });
+    }
+  </script>
+</body>
+
+</html>
