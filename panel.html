@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <title>监控大屏</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-md-6 col-xl-3">
+        <div class="card bg-purple text-white">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <span class="avatar-md rounded-circle bg-white bg-opacity-25 avatar-box">
+                <i class="mdi mdi-account fs-4"></i>
+              </span>
+              <span class="fs-4" id="tgyhs">未知</span>
+            </div>
+            <div class="text-end">托管用户数</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-3">
+        <div class="card bg-info text-white">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <span class="avatar-md rounded-circle bg-white bg-opacity-25 avatar-box">
+                <i class="mdi mdi-web-sync fs-4"></i>
+              </span>
+              <span class="fs-4" id="jrqqs">未知</span>
+            </div>
+            <div class="text-end">今日请求数</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-3">
+        <div class="card bg-yellow text-white">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <span class="avatar-md rounded-circle bg-white bg-opacity-25 avatar-box">
+                <i class="mdi mdi-currency-cny fs-4"></i>
+              </span>
+              <span class="fs-4" id="jrjbs">未知</span>
+            </div>
+            <div class="text-end">今日金币数</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-3">
+        <div class="card bg-warning text-white">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <span class="avatar-md rounded-circle bg-white bg-opacity-25 avatar-box">
+                <i class="mdi mdi-currency-usd fs-4"></i>
+              </span>
+              <span class="fs-4" id="jbzsl">未知</span>
+            </div>
+            <div class="text-end">金币总数量</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-6 mb-3">
+                <!-- <h6>请求 (时)</h6> -->
+                <canvas id="qqs" width="400" height="250"></canvas>
+              </div>
+              <div class="col-lg-6 mb-3">
+                <!-- <h6>金币 (时)</h6> -->
+                <canvas id="jbs" width="400" height="250"></canvas>
+              </div>
+              <div class="col-lg-6 mb-3">
+                <!-- <h6>请求 (天)</h6> -->
+                <canvas id="qqt" width="400" height="250"></canvas>
+              </div>
+              <div class="col-lg-6 mb-3">
+                <!-- <h6>金币 (天)</h6> -->
+                <canvas id="jbt" width="400" height="250"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>昵称</th>
+                    <th>执行时间</th>
+                    <th>执行行为</th>
+                    <th>等待时间</th>
+                  </tr>
+                </thead>
+                <tbody id="xl">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body" style="overflow-y: scroll;" id="rz">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title" id="mem_title">内存</div>
+          </div>
+          <div class="card-body">
+            <canvas id="nc" class="js-chartjs-bars"
+              style="display: block; box-sizing: border-box; height: 212.8px; width: 426.4px;" width="533"
+              height="266"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title" id="cpu_title">CPU</div>
+          </div>
+          <div class="card-body">
+            <canvas id="cpu" class="js-chartjs-bars"
+              style="display: block; box-sizing: border-box; height: 212.8px; width: 426.4px;" width="533"
+              height="266"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!--引入chart插件js-->
+  <script type="text/javascript" src="js/chart.min.js"></script>
+  <script type="text/javascript" src="js/main.min.js"></script>
+
+  <!-- 引入GoEsay插件 -->
+  <script type="text/javascript" src="js/goesay.js"></script>
+  <script type="text/javascript">
+    var goeasy = GoEasy.getInstance({
+      host: "hangzhou.goeasy.io",  //若是新加坡区域：singapore.goeasy.io
+      appkey: localStorage.getItem('key'),
+      modules: ['pubsub']//根据需要，传入‘pubsub’或'im’，或数组方式同时传入
+    });
+
+    //建立连接
+    goeasy.connect({
+      id: "panel_" + new Date().getTime(),
+      data: { from: "panel" },
+      onSuccess: function () {  //连接成功
+        log("text-success", "连接建立成功")
+      },
+      onFailed: function (error) { //连接失败
+        log("text-danger", "连接建立失败:" + error.message)
+      },
+      onProgress: function (attempts) { //连接或自动重连中
+        log("text-warning", "连接建立中，第" + attempts + "次重连")
+      }
+    });
+
+    var pubsub = goeasy.pubsub;
+    pubsub.subscribePresence({
+      channel: "3game",
+      onPresence: function (presenceEvent) {
+        var data = presenceEvent;
+        var action;
+        switch (data.action) {
+          case 'join':
+            action = '加入';
+            break;
+          case 'leave':
+            action = '离开';
+            break;
+          case 'timeout':
+            action = '下线';
+            break;
+          case 'back':
+            action = '上线';
+            break;
+          default:
+            action = '未知';
+            break;
+        }
+        var from;
+        switch (data.member.data.from) {
+          case 'client':
+            from = '客户端';
+            break;
+          case 'server':
+            from = '服务端';
+            break;
+          case "listener":
+            from = "监听器";
+            break;
+          case "panel":
+            from = "面板";
+            break;
+          default:
+            from = '未知';
+            break;
+        }
+        log("text-info", data.member.id + "(" + from + ") " + action + "了频道" + data.channel)
+      },
+      onSuccess: function () {  //监听成功
+        log("text-success", "在线状态监听成功")
+      },
+      onFailed: function (error) { //监听失败
+        log("text-danger", "在线状态监听失败")
+      },
+    });
+
+    pubsub.subscribe({
+      channel: "3game",
+      presence: {
+        enable: true
+      },
+      onMessage: function (message) {
+        postMessage(message)
+      },
+      onSuccess: function () {
+        log("text-success", "Channel订阅成功。")
+      },
+      onFailed: function (error) {
+        log("text-danger", "Channel订阅失败" + error.code)
+      }
+    });
+
+    function postMessage(message) {
+      let r = false;
+      if (message.content) message = message.content;
+      if (typeof message == "string") {
+        try {
+          message = JSON.parse(message)
+        } catch (error) {
+          r = true;
+        }
+      }
+      if (r || message.from == "client" || message.from == "panel") return;
+      console.log(message)
+      switch (message.code) {
+        case 0:
+          log(message.data.type, message.data.connect)
+          break;
+        case 4:
+          simple(message.data.simple);
+          setDataCarts(message.data.chart)
+          addCpu(message.data.CPU)
+          addnc(message.data.Mem)
+          break;
+      }
+    }
+
+    function setDataCarts(data) {
+      charts.qqs.data.labels = data.request_hort.labels
+      charts.qqs.data.datasets[0].data = data.request_hort.data
+      charts.qqs.update()
+      charts.jbs.data.labels = data.money_hort.labels
+      charts.jbs.data.datasets[0].data = data.money_hort.data
+      charts.jbs.update()
+      charts.qqt.data.labels = data.request_day.labels
+      charts.qqt.data.datasets[0].data = data.request_day.data
+      charts.qqt.update()
+      charts.jbt.data.labels = data.money_day.labels
+      charts.jbt.data.datasets[0].data = data.money_day.data
+      charts.jbt.update()
+    }
+
+    function addCpu(data) {
+      $("#cpu_title").text(`${data.threadNumber}核 ${data.name}`)
+      charts.cpu.data.datasets.forEach((dataset) => {
+        dataset.data.push(data.used);
+        dataset.label = `占用率: ${data.used}%`
+        if(dataset.data.length>20)dataset.data = dataset.data.slice(1)
+      });
+      charts.cpu.update();
+    }
+
+    function addnc(data) {
+      $("#mem_title").text(`${data.totalmem}G 已使用:${data.usedmem} 剩余:${data.freemem}`)
+      charts.nc.data.datasets.forEach((dataset) => {
+        dataset.data.push(data.usageRate);
+        dataset.label = `占用率: ${data.usageRate}%`
+        if(dataset.data.length>20)dataset.data = dataset.data.slice(1)
+      });
+      charts.nc.update();
+    }
+
+    function simple(data) {
+      $("#tgyhs").text(data.accounts);
+      $("#jrqqs").text(data.requests);
+      $("#jrjbs").text(data.money);
+      $("#jbzsl").text(data.money_all);
+    }
+    pubsub.publish({
+      channel: "3game",
+      message: JSON.stringify({
+        code: 4,
+        from: "panel",
+        data: {}
+      }, true)
+    });
+
+
+    const charts = {
+      qqs: new Chart($("#qqs"), {
+        type: 'bar',
+        data: {
+          labels: [],
+          datasets: [{
+            label: "次数/时",
+            backgroundColor: "#48b0f7",
+            borderColor: "#48b0f7",
+            fill: false,
+            data: [],
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: '请求'
+            },
+          }
+        }
+      }),
+      jbs: new Chart($("#jbs"), {
+        type: 'bar',
+        data: {
+          labels: [],
+          datasets: [{
+            label: "个/时",
+            backgroundColor: "#faa64b",
+            borderColor: "#faa64b",
+            fill: false,
+            data: [],
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: '金币'
+            },
+          }
+        }
+      }),
+      qqt: new Chart($("#qqt"), {
+        type: 'bar',
+        data: {
+          labels: [],
+          datasets: [{
+            label: "次数/天",
+            backgroundColor: "#48b0f7",
+            borderColor: "#48b0f7",
+            fill: false,
+            data: [],
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: '请求'
+            },
+          }
+        }
+      }),
+      jbt: new Chart($("#jbt"), {
+        type: 'bar',
+        data: {
+          labels: [],
+          datasets: [{
+            label: "个/天",
+            backgroundColor: "#faa64b",
+            borderColor: "#faa64b",
+            fill: false,
+            data: [],
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: '金币'
+            },
+          }
+        }
+      }),
+      nc: new Chart($("#nc"), {
+        type: 'line',
+        data: {
+          labels: ["","","","","","","","","","","","","","","","","","","",""],
+          datasets: [{
+            label: "占用率/%",
+            backgroundColor: "#15c377",
+            borderColor: "#15c377",
+            fill: true,
+            data: [],
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: '内存'
+            },
+          }
+        }
+      }),
+      cpu: new Chart($("#cpu"), {
+        type: 'line',
+        data: {
+          labels: ["","","","","","","","","","","","","","","","","","","",""],
+          datasets: [{
+            label: "占用率/%",
+            backgroundColor: "#15c377",
+            borderColor: "#15c377",
+            fill: true,
+            data: [],
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'CPU'
+            },
+          }
+        }
+      }),
+    }
+
+    function log(type, text) {
+      let style = "";
+      switch (type) {
+        case "success":
+          style = "text-success";
+          break;
+        case "warning":
+          style = "text-warning";
+          break;
+        case "failure":
+          style = "text-danger";
+          break;
+        default:
+          style = "text-info";
+          break;
+      }
+      $("#rz").prepend('<p class="' + style + '">' + text + '</p>')
+      if ($("#rz").children().length > 10) {
+        $("#rz").children().last().remove()
+      }
+    }
+  </script>
+</body>
+
+</html>

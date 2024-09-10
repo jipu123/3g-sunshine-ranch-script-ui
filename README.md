@@ -1,6 +1,3 @@
-<!--
- * @Date: 2024-08-24 16:19:39
--->
 # 该项目3g阳光牧场脚本UI
 
 #### 介绍
@@ -14,6 +11,8 @@
 该脚本可以打包为APP,或者随意部署在互联网上,无需后端,纯前端运行
 
 进入index后在右上角可设置GoEsay 的key
+
+运行流程查询暂未完成
 
 项目部署: [https://3gui.jipu.fun/](https://3gui.jipu.fun/)
 安卓版下载: [点此](https://gitee.com/ji_pu/3g-sunshine-ranch-script-ui/releases/)
