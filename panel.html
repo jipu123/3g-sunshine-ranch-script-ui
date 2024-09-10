@@ -197,13 +197,13 @@
       id: "panel_" + new Date().getTime(),
       data: { from: "panel" },
       onSuccess: function () {  //连接成功
-        log("text-success", "连接建立成功")
+        log("success", "连接建立成功")
       },
       onFailed: function (error) { //连接失败
-        log("text-danger", "连接建立失败:" + error.message)
+        log("danger", "连接建立失败:" + error.message)
       },
       onProgress: function (attempts) { //连接或自动重连中
-        log("text-warning", "连接建立中，第" + attempts + "次重连")
+        log("warning", "连接建立中，第" + attempts + "次重连")
       }
     });
 
@@ -248,13 +248,13 @@
             from = '未知';
             break;
         }
-        log("text-info", data.member.id + "(" + from + ") " + action + "了频道" + data.channel)
+        log("info", data.member.id + "(" + from + ") " + action + "了频道" + data.channel)
       },
       onSuccess: function () {  //监听成功
-        log("text-success", "在线状态监听成功")
+        log("success", "在线状态监听成功")
       },
       onFailed: function (error) { //监听失败
-        log("text-danger", "在线状态监听失败")
+        log("danger", "在线状态监听失败")
       },
     });
 
@@ -267,10 +267,10 @@
         postMessage(message)
       },
       onSuccess: function () {
-        log("text-success", "Channel订阅成功。")
+        log("success", "Channel订阅成功。")
       },
       onFailed: function (error) {
-        log("text-danger", "Channel订阅失败" + error.code)
+        log("danger", "Channel订阅失败" + error.code)
       }
     });
 
